@@ -246,3 +246,102 @@ body{
     font-family: Calibri, sans-serif;
 }
 
+/* ========================= */
+/* 📱 Responsiveness (Mobile & Tablet) */
+/* ========================= */
+
+/* Tablet screens (≤ 768px) */
+@media (max-width: 768px) {
+  #log-form, 
+  #logs-query, 
+  #heading-for-logs, 
+  .log {
+    width: 90%;
+  }
+
+  #title {
+    font-size: 1.75em;
+    margin: 1rem;
+  }
+
+  #form > div {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  #form > div > label {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+  }
+
+  #form > div > .input {
+    width: 100%;
+    height: 2.5rem;
+  }
+
+  #form > button {
+    width: 50%;
+    margin-top: 1rem;
+  }
+
+  #logs-username-label {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #logs-input {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #logs-username-input {
+    width: 100%;
+  }
+}
+
+/* Smartphones (≤ 480px) */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  #title {
+    font-size: 1.5em;
+  }
+
+  #log-form, 
+  #logs-query {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  #heading-for-logs, 
+  .log {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  #heading-for-logs > *, 
+  .log > * {
+    width: 100% !important;
+    margin: 0.25rem 0;
+    font-size: 0.9em;
+  }
+
+  #view-activity-btn,
+  #add-new-activity-btn,
+  #search-btn,
+  #form > button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+
