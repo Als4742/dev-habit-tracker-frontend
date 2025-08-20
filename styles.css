@@ -1,0 +1,248 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #F0F4F8;
+    --text-color: #1F2937; 
+    --accent-color: #F59E0B;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--bg-color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+#log-form{
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 35rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+}
+#title{
+    text-align: center;
+    font-size: 2em;
+    margin: 2rem;
+    color: var(--text-color);
+    text-shadow: 0 0 2px var(--text-color);
+}
+#form{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0.75rem;
+    height: fit-content;
+}
+#form > div{
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 1rem;
+    height: 3rem;
+}
+#form > div > label{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    width: 40%;
+    font-weight: bold;
+}
+#form > div > .input{
+    height: 80%;
+    width: 60%;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px black;
+}
+#description{
+    resize: none;
+    min-height: 3rem;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+#form > button{
+    width: 25%;
+    height: 2.5rem;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+}
+#form > button:hover{
+    color: white;
+    background-color: rgb(224, 155, 17);
+}
+#form > button:active{
+    border: 3px solid yellow;
+}
+
+#view-activity-btn{
+    margin: 2rem;
+    height: 3rem;
+    width: 10rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+#view-activity-btn:hover{
+   border: 2px solid salmon;
+   opacity: 0.8;
+}
+
+#logs-checker{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logs-query{
+   background-color: white;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    margin-block: 1rem;
+    width: 30rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+}
+#logs-input{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-block: 1rem;
+}
+#logs-username-label{
+    width: 30%;
+    padding-left: 2rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
+#logs-username-input{
+   width: 70%;
+   height: 2rem;
+   border-radius: 15px;
+   padding-inline: 1rem;
+   border: none;
+   box-shadow: 0 0 5px gray;;
+}
+#logs-username-input:focus{
+    border: none;
+    outline:none;
+}
+#search-btn{
+    margin-bottom: 1rem;
+    width: 5rem;
+    height: 2rem;
+    align-self: center;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+#search-btn:hover{
+  opacity: 0.8;
+}
+#search-btn:active{
+  border: 1px solid #F5F9F1;
+}
+
+#message{
+    font-size: 1.15em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    align-self: center;
+}
+
+#add-new-activity-btn{
+    width: 5rem;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #e9681e;
+    color: white;
+    cursor: pointer;
+}
+#add-new-activity-btn:hover{
+    opacity: 0.8;
+}
+
+#status-message{
+    align-self: center;
+    font-family: Arial;
+    color: green;
+}
+
+#heading-for-logs{
+    background-color: #16a085;
+    color: #ffffff;
+    margin: 1.5rem 1.5rem 1rem 1.5rem;;
+    display: flex;
+    height: 3rem;
+    width: 45rem;
+}
+#heading-for-logs > *{
+     align-self: center;
+     font-weight: 600;
+     font-family: Calibri, sans-serif;
+     margin: 0.5rem;
+}
+
+#heading-for-logs > .username, .log > .username{
+    width: 15%;
+}
+#heading-for-logs > .date, .log > .date{
+    width: 15%;
+}
+#heading-for-logs > .category, .log > .category{
+    width: 15%;
+}
+#heading-for-logs > .duration, .log > .duration{
+    width: 12%;
+}
+#heading-for-logs > .description, .log > .description{
+    width: 33%
+}
+
+#listOfAllLogs{
+    opacity: 0;
+}
+
+.log{
+    background-color: #e8f8f5;
+    color: #145a32;
+    display: flex;
+    margin: 0.5rem 1.5rem 0 1.5rem;
+    height: 3rem;
+    width: 45rem;
+    cursor: pointer;
+}
+.log:hover{
+    opacity: 0.5;
+}
+
+#listOfAllLogs .log:nth-child(odd){
+    background-color: #fdf2f2;
+    color: #7b241c;
+}
+.log > *{
+    align-self: center;
+    margin: 0.5rem;
+    font-family: Calibri, sans-serif;
+}
+
