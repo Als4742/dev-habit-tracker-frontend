@@ -319,21 +319,6 @@ body{
     width: 100%;
   }
 
-  #heading-for-logs, 
-  .log {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 0.5rem;
-    width: 100%;
-  }
-
-  #heading-for-logs > *, 
-  .log > * {
-    width: 100% !important;
-    margin: 0.25rem 0;
-    font-size: 0.9em;
-  }
 
   #view-activity-btn,
   #add-new-activity-btn,
