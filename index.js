@@ -96,8 +96,7 @@ const Logs = ({setShowLogForm})=>{
 
 
     const fetchLogs = async (username)=>{
-      
-      try{
+        try{
           const res = await fetch(`${backend_link}/user/logs?username=${username}`); 
        
           const data = await res.json().catch(()=>{});
@@ -111,13 +110,6 @@ const Logs = ({setShowLogForm})=>{
         catch(err){
            console.log(`Error: ${err.message}`);
         }
-    }
-
-    const handleSearchClick = ()=>{
-      const btn = document.getElementById('search-btn'); 
-      btn.style.cursor = none;
-      fetchLogs(username);
-      btn.style.cursor = pointer; 
     }
 
     const root = document.getElementById('root').style;
@@ -136,7 +128,7 @@ const Logs = ({setShowLogForm})=>{
             <input id="logs-username-input" type="text" placeholder="Enter Username..." value={username} onChange={(e)=>{setUsername(e.target.value)}}
               onKeyDown={(e)=>{ if(e.key === " ") e.preventDefault();}}/>
           </div>
-          <button id="search-btn" onClick={ ()=> handleSearchClick }>Search</button>
+          <button id="search-btn" onClick={ () => fetchLogs(username) }>Search</button>
         </div>
         <button id="add-new-activity-btn" onClick={()=>setShowLogForm(true)}>Add new activity</button>
       </div>
