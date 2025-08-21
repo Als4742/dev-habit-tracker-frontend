@@ -91,15 +91,16 @@ const LogForm = ()=>{
 //---------------------------------------LOgs -----------------------------------//
 
 const Logs = ({setShowLogForm})=>{
-
     const [logs, setLogs] = useState([]);
     const [username, setUsername] = useState("");
 
 
     const fetchLogs = async (username)=>{
-
+        const btn = document.getElementById('search-btn');
         try{
+          btn.disabled = true;
           const res = await fetch(`${backend_link}/user/logs?username=${username}`); 
+       
           const data = await res.json().catch(()=>{});
           if(!res.ok){
              throw new Error(data.error || `HTTP: ${res.status}`);
@@ -107,6 +108,7 @@ const Logs = ({setShowLogForm})=>{
           data.sort();        
           setLogs(data);
           document.getElementById('listOfAllLogs').style.opacity = 1;
+          btn.disabled = false;
         }
         catch(err){
            console.log(`Error: ${err.message}`);
