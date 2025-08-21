@@ -136,7 +136,7 @@ const Logs = ({setShowLogForm})=>{
             <input id="logs-username-input" type="text" placeholder="Enter Username..." value={username} onChange={(e)=>{setUsername(e.target.value)}}
               onKeyDown={(e)=>{ if(e.key === " ") e.preventDefault();}}/>
           </div>
-          <button id="search-btn" onClick={ handleSearchClick }>Search</button>
+          <button id="search-btn" onClick={ ()=> handleSearchClick }>Search</button>
         </div>
         <button id="add-new-activity-btn" onClick={()=>setShowLogForm(true)}>Add new activity</button>
       </div>
