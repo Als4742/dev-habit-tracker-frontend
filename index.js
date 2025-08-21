@@ -13,6 +13,7 @@ const LogForm = ()=>{
    const categories = ["Coding", "Development", "Practicing", "Other"];
 
     const handleSubmit = async (e)=>{
+        setMessage("");
          e.preventDefault();
          try{
             const res = await fetch(`${backend_link}/user`, {
