@@ -78,7 +78,7 @@ const LogForm = ()=>{
           value={description} onChange={e=>{setDescription(e.target.value)}}
           />
         </div>
-        <div id="status-message" style={`color:${messageColor}`}>
+        <div id="status-message" style={{color: messageColor}}>
           {message}
         </div>
         <button id="submit" type="submit" >Add Activity</button>
