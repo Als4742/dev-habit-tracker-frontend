@@ -8,6 +8,7 @@ const LogForm = ()=>{
     const [durationInMinutes, setDurationInMinutes] = useState();
     const [description, setDescription] = useState("");
     const [message, setMessage] = useState("");
+    const [messageColor, setMessageColor] = useState("green");
 
    const categories = ["Coding", "Development", "Practicing", "Other"];
 
@@ -26,16 +27,16 @@ const LogForm = ()=>{
                setDurationInMinutes('');
                setDescription("");
                setCategoryOfActivity("");
-               document.getElementById('message').style.color = "green";
+               setMessageColor("green");
             }
             else{
                 setMessage(`Error in saving Activity`);
-                document.getElementById('message').style.color = "red";  
+                setMessageColor('red');  
             }
          }  
          catch(err){
             setMessage(`Error in saving Activity`);
-            document.getElementById('message').style.color = "red"; 
+            setMessageColor('red');  
          }
     }
  
@@ -77,7 +78,7 @@ const LogForm = ()=>{
           value={description} onChange={e=>{setDescription(e.target.value)}}
           />
         </div>
-        <div id="status-message">
+        <div id="status-message" style={`color:${messageColor}`}>
           {message}
         </div>
         <button id="submit" type="submit" >Add Activity</button>
