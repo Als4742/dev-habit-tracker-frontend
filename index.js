@@ -98,7 +98,7 @@ const Logs = ({setShowLogForm})=>{
     const fetchLogs = async (username)=>{
         const btn = document.getElementById('search-btn');
         try{
-          btn.disabled = true;
+          btn.style.cursor = none;
           const res = await fetch(`${backend_link}/user/logs?username=${username}`); 
        
           const data = await res.json().catch(()=>{});
@@ -108,7 +108,7 @@ const Logs = ({setShowLogForm})=>{
           data.sort();        
           setLogs(data);
           document.getElementById('listOfAllLogs').style.opacity = 1;
-          btn.disabled = false;
+          btn.disabled = pointer;
         }
         catch(err){
            console.log(`Error: ${err.message}`);
